@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Call of Duty || Assassin's Creed</title>
+<script type = "text/javascript">
+
+    var slides = new Array("pic1.jpg", "pic2.jpg", "pic4.jpg", "pic5.jpg", "pic6.jpg", "pic7.jpg")
+
+picnum = slides.length - 1
+function slideshow() {
+    picnum = picnum + 1
+    if (picnum == slides.length) { picnum = 0 }
+    document.show.src = slides[picnum]
+    setTimeout("slideshow()", 2000)
+}
+
+function loadpage(myMenu) {
+        var Menuselect = myMenu.menu.selectedIndex
+        var MenuURL = myMenu.menu.options[Menuselect].value + ".html"
+        window.location = MenuURL
+    }
+
+
+function calculate(){
+     var type;
+     var newline="&#13;";
+	 var sum=0;
+	 var games="";
+     if( document.getElementById("ops").checked==true){
+      type="Black Ops";
+	  sum+=20;
+     }
+     if( document.getElementById("ops2").checked==true){
+      type="Black Ops 2";
+	  sum+=35;
+     }
+     if( document.getElementById("ghosts").checked==true){
+      type="Ghosts";
+	  sum+=40;
+     }
+	 if( document.getElementById("blackflag").checked==true){
+      type="Black Flag";
+	  sum+=18;
+     }
+	 if( document.getElementById("rogue").checked==true){
+      type="Rogue";
+	  sum+=55;
+     }
+	 
+     var length = games.length;
+     games = games.slice(0,length-2);
+
+     document.getElementById("opta").innerHTML = games+newline+"Price - $"+sum;
+    }
+
+function cleanit(){
+		document.getElementById("opta").innerHTML = "Text area for submitted info.";
+    }
+
+</script>
+    
+    
+<style>
+#menubar{
+	border-top: 4px solid black; border-right: 4px solid black; border-bottom: 4px solid black ; border-left:4px solid black; background-color:black; height: 23px; color:red
+}
+.menu {float:left; padding: 0.1em 3em 0.1em 0.5em; cursor:default
+}
+
+.menu ul {display:none; position: absolute; background-color: black; color:red; list-style:none; margin: 0.1em 0 0 0; padding:0
+	
+}
+
+.menu ul li {display:block; padding: 0.2em; color:red
+	
+}
+
+div.menu:hover ul { margin: 0; padding: 0; display:block; border-bottom: 0.15em solid black; border-left: 0.15em solid black
+	
+}
+
+div.menu ul li {background-color:black; color:red}
+
+body { background-color : black}
+
+
+div#sizes img.large {width:0; border:0}
+
+div#sizes a:hover img.large {width:220px; height:294px; position:absolute; left:250px; top:505px}
+
+div#sizes img.large2 {width:0; border:0}
+
+div#sizes a:hover img.large2 {width:220px; height:294px; position:absolute; left:250px; top:1055px}
+
+div#sizes img.large3 {width:0; border:0}
+
+div#sizes a:hover img.large3 {width:220px; height:294px; position:absolute; left:250px; top:1605px}
+
+div#sizes img.large4 {width:0; border:0}
+
+div#sizes a:hover img.large4 {width:220px; height:294px; position:absolute; left:250px; top:2165px}
+
+div#sizes img.large5 {width:0; border:0}
+
+div#sizes a:hover img.large5 {width:220px; height:294px; position:absolute; left:250px; top:2665px}
+
+div#sizes img.large6 {width:0; border:0}
+
+div#sizes a:hover img.large6 {width:220px; height:294px; position:absolute; left:250px; top:3225px}
+
+.slideshow {
+    visibility: visible !important;
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+    transition: opacity 3s ease-in-out;
+}
+
+
+    </style>
+
+</head>
+<body onload= "slideshow()">
+
+    <div id="menubar">
+        <div id="menu1" class="menu">
+            Call of Duty
+            <ul>
+                <li><a href="blackops.html">Black Ops</a></li>
+                <li><a href="blackops2.html">Black Ops 2</a></li>
+                <li><a href="ghosts.html">Ghosts</a></li>
+                
+            </ul>
+        </div>
+        <div id="menu2" class="menu">
+            Assassin's Creed
+            <ul>
+                <li><a href="blackflag.html">Black Flag</a></li>
+                <li><a href="rogue.html">Rogue</a></li>
+                
+            </ul>
+        </div>
+        <br></br>
+
+        <div align="center">
+            <img src="images.jpg" />
+            <img src="images2.jpg">
+        </div>
+
+<br></br>
+
+<table width="100%" border="0" cellpadding="3">
+  <tr>
+
+	<td width="34%"><div class="movie">
+<video autoplay loop controls width = "400" height = "350">
+<source src = "cod.mp4" type = "video/mp4">Video supposed to be here</source>
+</video>
+</div></td>
+
+
+	<td width="34%"><div align = "right" class="movie">
+<video controls loop width = "400" height = "350">
+<source src = "unity.mp4" type = "video/mp4">Video supposed to be here</source>
+</video>
+</div></td>
+</tr>
+</table>
+
+	<div align="center">
+            <img src="pic1.jpg" alt="show" name="show" width="450" height="300" id="show" />
+        </div>
+
+
+<table>
+<tr>
+    <td colspan="2">
+    <form id="announceMenu" action="_">
+      <p style="font-weight:bolder">
+       Select game to view:
+         <select name="menu" onchange="loadpage(this.form)">
+           <option>Select an information item</option>
+           <option value="http://www.callofduty.com/blackops/game">Call of Duty: Black Ops</option>
+           <option value="http://www.callofduty.com/blackops2">Call of Duty: Black Ops 2</option>
+           <option value="http://www.callofduty.com/ghosts/home">Call of Duty: Ghosts</option>
+	   <option value="http://www.gamefaqs.com/ps3/705970-assassins-creed-iv-black-flag">Assassin's Creed IV: Black Flag</option>
+	   <option value="http://www.gamefaqs.com/ps3/826286-assassins-creed-rogue">Assassin's Creed: Rogue</option>
+         </select>
+      </p>
+    </form>
+</td>
+</tr>
+</table>
+
+
+<form align = "middle" name="wdfor" action="" method="post" >
+   
+     <p id = "op" class = "outp" > <b /> Select game: &nbsp;&nbsp;
+        <input type="checkbox" name = "size" id="ops" value = "ops"> Black Ops - $20.00 <b />
+		<input type="checkbox" name = "size" id="ops2" value = "ops2"> Black Ops 2 - $35.00 <b />
+		<input type="checkbox" name = "size" id="ghosts" value = "ghosts"> Ghosts - $40.00 <b />
+
+<input type="checkbox" name = "size" id="blackflag" value = "blackflag"> Black Flag - $18.00 <b />
+
+<input type="checkbox" name = "size" id="rogue" value = "rogue"> Rogue - $55.00 <b />
+     </p>
+	 
+		
+
+
+  </form> 
+   <p id="op" class="outp">
+    To obtain the total price of games click on the price button below:
+	
+	<br /><br />
+	
+	<input type="button" align = "left" onclick="calculate();" value="Price (Submit Button)"/>
+
+<input type="reset" align = "left" onclick="cleanit();" value="Clear Form"/>
+			   
+	
+			   
+	<br /><br />
+			   
+	<textarea class="outp" id="opta" style="border-color:black;" rows="6" cols="40" onfocus="this.blur()">
+     Text area for submitted info.
+    </textarea>
+			   
+   <br />
+   </p>
+
+
+
+</body>
+</html>
